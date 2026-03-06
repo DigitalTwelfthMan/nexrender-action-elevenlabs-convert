@@ -1,6 +1,6 @@
 {
   "name": "nexrender-action-elevenlabs-convert",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use elevenlabs to convert audio in nexrender",
   "homepage": "https://github.com/DigitalTwelfthMan/nexrender-action-elevenlabs-convert#readme",
   "bugs": {
@@ -18,7 +18,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@elevenlabs/elevenlabs-js": "^2.32.0",
-    "dotenv": "^17.2.3"
+    "@elevenlabs/elevenlabs-js": "^2.32.0"
   }
 }
