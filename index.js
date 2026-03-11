@@ -19,7 +19,7 @@ module.exports = async (job, settings, { api_key, voice_id, layers, model_id, ou
 
     for (const asset of job.assets) {
         // Only process audio assets that match the names in our 'layers' config
-        if (asset.type === 'audio' && targetLayers.includes(asset.name)) {
+        if (asset.type === 'audio' && targetLayers.includes(asset.layerName)) {
 
             // Create a unique hash based on text, voice, and format to avoid duplicate API calls within a job
             const hash = crypto.createHash('md5')
@@ -65,7 +65,7 @@ module.exports = async (job, settings, { api_key, voice_id, layers, model_id, ou
                 // We throw a hard error here to prevent nexrender from wasting time
                 // trying to render a video with missing/broken audio assets.
                 settings.logger.log(`[elevenlabs] API Error: ${error.message}`);
-                throw new Error(`[elevenlabs] Failed to generate audio for ${asset.name}: ${error.message}`);
+                throw new Error(`[elevenlabs] Failed to generate audio for ${asset.layerName}: ${error.message}`);
             }
         }
     }
